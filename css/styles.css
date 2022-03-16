@@ -468,9 +468,6 @@ footer {
 }
 
 @media (max-width: 1400px) {
-  body {
-    background-color: black;
-  }
   header {
     margin-top: 2em;
   }
@@ -709,16 +706,13 @@ footer {
 
 @media (max-width: 480px) {
   body {
-    background-color: lightblue;
+    overflow: hidden;
   }
-  /*   main {
-         height: 60%;
-     } */
   .main__cont img {
     padding-left: 0.3em;
   }
   .main__cont {
-    width: 80%;
+    width: 85%;
   }
   .game {
     width: 90%;
@@ -741,6 +735,7 @@ footer {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    margin-bottom: 4em;
   }
   .game__choices p {
     font-size: 16px;
@@ -838,7 +833,7 @@ footer {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    margin-top: 2em;
+    margin-bottom: 1em;
   }
   .result__content {
     margin: 0;
@@ -847,6 +842,9 @@ footer {
   .result__content--btn {
     width: 100%;
     height: 3.125em;
+  }
+  .result__contenttxt {
+    font-size: 20px;
   }
   footer {
     -webkit-box-align: center;
