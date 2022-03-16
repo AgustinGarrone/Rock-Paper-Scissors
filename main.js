@@ -1,11 +1,13 @@
 
 let timeout
 let points=0
-let lifes=3
+let resultsMostrados=false
 
 const fx1= new Audio("fx1.mp3")
 const fx2= new Audio("fx2.mp3")
 const winMp3= new Audio("win.mp3")
+
+startMenu()
 
 function showRules () {
     let main= document.getElementsByTagName("main")[0]
@@ -37,17 +39,20 @@ function closeRules() {
 }
 
 function startMenu() {
-    let rules = document.querySelector(".footer__rules")
-
-let paper= document.querySelector(".game__options--paper")
-let rock= document.querySelector(".game__options--rock")
-let scissors= document.querySelector(".game__options--scissors")
-    rules.addEventListener("click",showRules)
-    paper.addEventListener("click",()=>startGame("paper"))
-    rock.addEventListener("click",()=>startGame("rock"))
-    scissors.addEventListener("click",()=>startGame("scissors"))
+    if (resultsMostrados==false) {
+        let rules = document.querySelector(".footer__rules")
+        let paper= document.querySelector(".game__options--paper")
+        let rock= document.querySelector(".game__options--rock")
+        let scissors= document.querySelector(".game__options--scissors")
+        rules.addEventListener("click",showRules)
+        paper.addEventListener("click",()=>startGame("paper"))
+        rock.addEventListener("click",()=>startGame("rock"))
+        scissors.addEventListener("click",()=>startGame("scissors")) 
+    } else {
+        document.querySelector(".result__content--btn").addEventListener("click",reset)
+    }
 }
-startMenu()
+
 
 function startGame(choice) {
     let game= document.querySelector(".game")
@@ -302,6 +307,7 @@ function gameResult(player,house) {
         }
     }
     document.querySelector(".result__content--btn").addEventListener("click",reset)
+    resultsMostrados=true
 }
 
 function reset() {
@@ -322,6 +328,7 @@ function reset() {
                 </div>
     </div>
     `
+    resultsMostrados=false
     startMenu()
 }
 
