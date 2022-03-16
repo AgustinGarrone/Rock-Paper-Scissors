@@ -5,10 +5,16 @@ let lifes=3
 
 const fx1= new Audio("fx1.mp3")
 const fx2= new Audio("fx2.mp3")
+const winMp3= new Audio("win.mp3")
+
 function showRules () {
-    let body= document.getElementsByTagName("body")[0]
+    let main= document.getElementsByTagName("main")[0]
+    let footer=document.getElementsByTagName("footer")[0]
     /* body.style.setProperty("filter","brightness(50%)") */
-    body.innerHTML+=`
+    main.setAttribute("style","filter:brightness(50%);")
+    footer.setAttribute("style","filter:brightness(50%);")
+    document.getElementsByTagName("body")[0].style.background="black"
+    document.getElementsByTagName("body")[0].innerHTML+=`
     <div class=rules> 
         <img class="rulesimg" src="img/image-rules.svg" alt="">
         <div class=rulestext>
@@ -20,8 +26,14 @@ function showRules () {
 }
 
 function closeRules() {
+    let main= document.getElementsByTagName("main")[0]
+    let footer=document.getElementsByTagName("footer")[0]
     document.querySelector(".rules").remove()
+    document.getElementsByTagName("body")[0].style.background="#1b2647"
     document.querySelector(".footer__rules").addEventListener("click",showRules)
+    main.setAttribute("style","filter:brightness(100%);")
+    footer.setAttribute("style","filter:brightness(100%);")
+    startMenu()
 }
 
 function startMenu() {
@@ -45,13 +57,13 @@ function startGame(choice) {
     <section class="game__choices">
         <div class="game__choices1">
             <p>YOU PICKED</p>
-            <div class="game__choicesplayer--${choice}">
+            <div class="game__choicesplayer--${choice} playerwin">
                 <img src="img/icon-${choice}.svg" alt="">
             </div>
         </div>
         <div class="game__choices2 midNod">
             <p>THE HOUSE PICKED</p>  
-            <div class="game__choices--rival">
+            <div class="game__choices--rival rivalwin">
                 <div class="game__choicesplayer--paper">
                     <img src="img/icon-paper.svg" alt="">
                 </div>
@@ -169,7 +181,7 @@ function rivalSelect(choice) {
         }
         if (segundostranscurridos==segundos*1000) {
             clearTimeout(intervalo)
-            fx2.play()
+/*             fx2.play() */
             gameResult(choice,houseSelection)
         }
     }, 250);
@@ -191,6 +203,8 @@ function gameResult(player,house) {
                 </div>
             </div>
             `
+            fx2.play()
+            score("")
         } else if (house=="scissors") {
             result.innerHTML+=`
             <div class="result__content">
@@ -200,6 +214,7 @@ function gameResult(player,house) {
                 </div>
             </div>
             `
+            winMp3.play()
             score("win")
         } else if (house=="paper") {
             result.innerHTML+=`
@@ -210,6 +225,8 @@ function gameResult(player,house) {
                 </div>
             </div>
             `
+            fx2.play()
+            score("lose")
         }
     }
     if (player=="paper") {
@@ -222,6 +239,8 @@ function gameResult(player,house) {
                 </div>
             </div>
             `
+            fx2.play()
+            score("")
         } else if (house=="rock") {
             result.innerHTML+=`
             <div class="result__content">
@@ -231,6 +250,7 @@ function gameResult(player,house) {
                 </div>
             </div>
             `
+            winMp3.play()
             score("win")
         } else if (house=="scissors") {
             result.innerHTML+=`
@@ -241,6 +261,8 @@ function gameResult(player,house) {
                 </div>
             </div>
             `
+            fx2.play()
+            score("lose")
         }
     }
     if (player=="scissors") {
@@ -253,6 +275,8 @@ function gameResult(player,house) {
                 </div>
             </div>
             `
+            fx2.play()
+            score("")
         } else if (house=="paper") {
             result.innerHTML+=`
             <div class="result__content">
@@ -262,6 +286,7 @@ function gameResult(player,house) {
                 </div>
             </div>
             `
+            winMp3.play()
             score("win")
         } else if (house=="rock") {
             result.innerHTML+=`
@@ -272,6 +297,8 @@ function gameResult(player,house) {
                 </div>
             </div>
             `
+            fx2.play()
+            score("lose")
         }
     }
     document.querySelector(".result__content--btn").addEventListener("click",reset)
@@ -299,10 +326,17 @@ function reset() {
 }
 
 function score(status) {
-    if (status="win") {
+    if (status=="win") {
         points=points+1
         document.querySelector(".main__cont--scorenumber").innerHTML=`${points}`
+        document.querySelector(".playerwin").setAttribute("style","filter:drop-shadow(50px 50px 100px white);")
+    } else if (status=="lose") {
+        if (points>0) {
+            points=points-1
+            document.querySelector(".main__cont--scorenumber").innerHTML=`${points}`
+        }
+        document.querySelector(".rivalwin").setAttribute("style","filter:drop-shadow(50px 50px 100px white);")
     } else {
-        lifes=lifes-1
+        document.querySelector(".result").setAttribute("style","filter:drop-shadow(50px 50px 100px white);")
     }
 }

@@ -277,6 +277,13 @@ header {
       -ms-flex-pack: center;
           justify-content: center;
   cursor: pointer;
+  -webkit-box-shadow: -2px 17px 5px 0px rgba(191, 146, 146, 0.69) inset;
+          box-shadow: -2px 17px 5px 0px rgba(191, 146, 146, 0.69) inset;
+}
+
+.game__choicesplayer--rock img {
+  height: 80px;
+  width: 80px;
 }
 
 .game__choicesplayer--paper {
@@ -295,6 +302,13 @@ header {
       -ms-flex-pack: center;
           justify-content: center;
   cursor: pointer;
+  -webkit-box-shadow: -2px 17px 5px 0px rgba(191, 146, 146, 0.69) inset;
+          box-shadow: -2px 17px 5px 0px rgba(191, 146, 146, 0.69) inset;
+}
+
+.game__choicesplayer--paper img {
+  height: 80px;
+  width: 80px;
 }
 
 .game__choicesplayer--scissors {
@@ -313,6 +327,13 @@ header {
       -ms-flex-pack: center;
           justify-content: center;
   cursor: pointer;
+  -webkit-box-shadow: -2px 17px 5px 0px rgba(191, 146, 146, 0.69) inset;
+          box-shadow: -2px 17px 5px 0px rgba(191, 146, 146, 0.69) inset;
+}
+
+.game__choicesplayer--scissors img {
+  height: 80px;
+  width: 80px;
 }
 
 .result__content {
@@ -451,5 +472,11 @@ footer {
 
 .rulesclose {
   cursor: pointer;
+}
+
+@media (min-width: 1800px) {
+  body {
+    background-color: black;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

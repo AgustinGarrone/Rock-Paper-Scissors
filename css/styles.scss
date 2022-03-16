@@ -167,6 +167,11 @@ header {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    box-shadow: -2px 17px 5px 0px rgba(191,146,146,0.69) inset;
+    img {
+        height: 80px;
+        width: 80px;
+    }
 }
 .game__choicesplayer--paper {
     background-color: #dfdfdd;
@@ -178,6 +183,11 @@ header {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    box-shadow: -2px 17px 5px 0px rgba(191,146,146,0.69) inset;
+    img {
+        height: 80px;
+        width: 80px;
+    }
 }
 .game__choicesplayer--scissors {
     background-color: #dfdfdd;
@@ -189,6 +199,11 @@ header {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    box-shadow: -2px 17px 5px 0px rgba(191,146,146,0.69) inset;
+    img {
+        height: 80px;
+        width: 80px;
+    }
 }
 
 .result__content {
@@ -283,3 +298,10 @@ footer {
 .rulesclose {
     cursor: pointer;
 }
+
+ 
+@media (min-width: 1800px){
+   body{
+       background-color: black;
+   }
+    }
