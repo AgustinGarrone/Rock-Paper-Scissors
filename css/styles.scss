@@ -530,7 +530,7 @@ footer {
          grid-auto-rows: 100px;
          width: 100%;
          justify-content: center;
-         margin-bottom: 0;
+         margin-bottom: 1em;
          p {
              font-size: 16px;
          }
@@ -596,7 +596,6 @@ footer {
          display: flex;
          align-items: center;
          justify-content: center;
-         margin-bottom: 1em;
          margin-top: 1em;
      }
      .result__content {

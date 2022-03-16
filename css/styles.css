@@ -796,7 +796,7 @@ footer {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    margin-bottom: 0;
+    margin-bottom: 1em;
   }
   .game__choices p {
     font-size: 16px;
@@ -894,7 +894,6 @@ footer {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    margin-bottom: 1em;
     margin-top: 1em;
   }
   .result__content {
