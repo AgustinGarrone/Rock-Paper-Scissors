@@ -895,6 +895,7 @@ footer {
         -ms-flex-pack: center;
             justify-content: center;
     margin-bottom: 1em;
+    margin-top: 1em;
   }
   .result__content {
     margin: 0;
@@ -915,6 +916,7 @@ footer {
         -ms-flex-pack: center;
             justify-content: center;
     width: 100%;
+    height: 3em;
   }
   .footer__rules {
     margin: 0;
